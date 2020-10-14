@@ -1,5 +1,7 @@
 package demo;
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 import javax.xml.bind.JAXBContext;
@@ -10,13 +12,13 @@ import javax.xml.bind.Unmarshaller;
 
 public class XMLToObject {
 
-	public static void main(String[] args) {
-		try {
-			File test = new File("C:/Users/Benutzer 1/XMLVerarbeitungSchulung/xml-sample/fahrzeuge2.xml");
+	public static void main(String[] args) throws IOException, JAXBException {
+		try(InputStream in = XMLToObject.class.getResourceAsStream("/fahrzeuge2.xml")) {
+			
 			JAXBContext jaxbContext = JAXBContext.newInstance("demo");
 			
 			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-			Fahrzeuge f=(Fahrzeuge) jaxbUnmarshaller.unmarshal(test);
+			Fahrzeuge f=(Fahrzeuge) jaxbUnmarshaller.unmarshal(in);
 			
 			
 			List<Fahrzeug> fahrzeuge=f.getFahrzeug();
@@ -26,7 +28,7 @@ public class XMLToObject {
 			fahrzeuge.removeIf(fz->fz.getFahrzeugart().equalsIgnoreCase("lkw"));
 			jaxbContext.createMarshaller().marshal(f, new File("fahrzeuge3.xml"));
 	        
-		}catch(JAXBException e) {e.printStackTrace();}
+		}
 	} 
 }
 

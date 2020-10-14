@@ -1,5 +1,5 @@
 /target/
 .*
-*.xml
+/*.xml
 !pom.xml
 !.gitignore

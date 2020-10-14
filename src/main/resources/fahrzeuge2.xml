@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fahrzeuge xmlns="http://www.deutscherv.de/fahrzeuge">
+	<fahrzeug kennzeichen="BI-ER 1486">
+		<typ>VW</typ>
+		<model>golf</model>
+		<leistung>135</leistung>
+		<fahrzeugart>pkw</fahrzeugart>
+		<ausstattung>standard</ausstattung>
+	</fahrzeug>
+	<fahrzeug kennzeichen="BI-ER 1467">
+		<typ>Audi</typ>
+		<model>a4</model>
+		<leistung>180</leistung>
+		<fahrzeugart>pkw</fahrzeugart>
+		<ausstattung>sport</ausstattung>
+	</fahrzeug>
+	<fahrzeug kennzeichen="WU-AF 149">
+		<typ>MAN</typ>
+		<model>Roadrunner</model>
+		<leistung>250</leistung>
+		<fahrzeugart>lkw</fahrzeugart>
+		<ausstattung>family</ausstattung>
+	</fahrzeug>
+</fahrzeuge>
