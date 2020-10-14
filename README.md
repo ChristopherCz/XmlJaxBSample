@@ -78,7 +78,7 @@ geringe XML Kenntnisse ausreichend   |  |
 	</build>
 ~~~
 - In Eclipse --> Run As --> Maven install oder Generate Resources
-- Alt + F5 zum Eclipse Aktualisieren
+- Alt + F5 zum Eclipse Aktualisieren 
 - Code wurde generiert!
 
 ###### Elemente und Attribute werden über Annotationen festgelegt:
