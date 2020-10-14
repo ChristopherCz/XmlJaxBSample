@@ -5,9 +5,9 @@ Es stellt eine API und verschiedene tools bereit, die das mappen von XML und Jav
 
 Folgende Operationen sind möglich:  
 >
->-Unmarshal XML als Java Darstellung (Klassen, Objekte,...)
->-Manipulation der Daten mithilfe von Java
->-Java Dateien "Marshal" \--> Umwandlung in XML
+>-Unmarshal XML als Java Darstellung (Klassen, Objekte,...)  
+>-Manipulation der Daten mithilfe von Java  
+>-Java Dateien "Marshal" \--> Umwandlung in XML  
 >
 Vorteile | Herausforderungen | 
 -------- | -------- | 
