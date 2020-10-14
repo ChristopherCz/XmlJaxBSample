@@ -23,6 +23,63 @@ geringe XML Kenntnisse ausreichend   |  |
 - Grundsätzlich muss Ein JAXB Context Object erstellt werden. 
 - Marshaller/Unmarshaller Objekte erzeugen
 - Marshal/Unmarshal Methoden aufrufen
+
+##### Erzeugen des Java-Codes aus dem Schema in Eclipse
+- Maven Projekt
+- JAXB Dependencys in pom.xml eintragen
+~~~
+<dependencies>
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>2.3.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.activation</groupId>
+			<artifactId>activation</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-core</artifactId>
+			<version>2.3.0.1</version>
+		</dependency>
+	</dependencies>
+~~~
+- JAXB2 Maven Plugin in pom.xml eintragen
+~~~
+<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxb2-maven-plugin</artifactId>
+				<version>2.5.0</version>
+				<executions>
+					<execution>
+						<id>xjc-schema1</id>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+						<configuration>
+							<target>2.2</target>
+							<schemaFiles>fahrzeuge.xsd</schemaFiles>
+							<packageName>demo</packageName>
+							<clearOutputDir>false</clearOutputDir>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+~~~
+- In Eclipse --> Run As --> Maven install
+- Code wurde generiert!
+
 ###### Elemente und Attribute werden über Annotationen festgelegt:
 - @XmlRootElement gibt das Wurzelelement an
 - @XmlElement beschreibt ein Unterelement des Wurzelelementes
