@@ -23,7 +23,7 @@ public class XMLToObject {
 			
 			List<Fahrzeug> fahrzeuge=f.getFahrzeug();
 			for(Fahrzeug ans:fahrzeuge) {
-				System.out.println(ans.getFahrzeugart());
+				System.out.println(ans.getModel());
 			}
 			fahrzeuge.removeIf(fz->fz.getFahrzeugart().equalsIgnoreCase("lkw"));
 			jaxbContext.createMarshaller().marshal(f, new File("fahrzeuge3.xml"));
